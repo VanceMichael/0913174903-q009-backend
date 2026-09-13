@@ -1,1 +1,23 @@
-{"name":"backend-service","private":true,"scripts":{"test":"node --test"},"dependencies":{}}
+{
+  "name": "grain-quality-tracker",
+  "private": true,
+  "scripts": {
+    "start": "tsx src/main.ts",
+    "migrate": "tsx scripts/migrate.ts",
+    "test": "node --import tsx --test test/*.test.ts"
+  },
+  "dependencies": {
+    "@nestjs/common": "^11.1.6",
+    "@nestjs/core": "^11.1.6",
+    "@nestjs/platform-express": "^11.1.6",
+    "better-sqlite3": "^11.10.0",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.2",
+    "typeorm": "^0.3.26"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2"
+  }
+}

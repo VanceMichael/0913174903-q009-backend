@@ -1,4 +1,11 @@
-FROM node:22-bookworm
+FROM node:22-bookworm-slim
 WORKDIR /app
+COPY package*.json ./
+RUN npm ci
 COPY . .
-CMD ["sh", "-c", "echo 请先完成服务实现"]
+RUN npm test
+RUN mkdir -p /app/data && chown -R node:node /app
+USER node
+ENV APP_DB_PATH=/app/data/service.sqlite3
+EXPOSE 8080
+CMD ["npm", "start"]

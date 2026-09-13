@@ -2,8 +2,8 @@
 
 技术栈：Node.js TypeScript NestJS
 
-初始化与测试：npm ci && npm test
+初始化与测试：`npm ci && npm run migrate`
 
-测试命令：npm test
+测试命令：`npm test`
 
 SQLite 路径可通过环境变量配置，默认位于项目工作目录的 data 目录。
